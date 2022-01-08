@@ -32,7 +32,7 @@ class BumpCMD extends Command {
                 return message.channel.send(embed)
             }
         await Servers.updateOne({ guildid: server.guildid }, {$set: { lastbumped: new Date(Date.parse(new Date())) } })
-        
+        embed.setImage('https://media.discordapp.net/attachments/853230805785772085/929125047271039017/20220107_223027.gif')
         embed.setDescription(`✅ Bumper avec succès!\n \n\ Votre serveur a bien était Bump avec succès, vous pouvez [Voir la page](${process.env.DOMAIN}/server/${message.guild.id})`)
         message.channel.send(embed);
     }
